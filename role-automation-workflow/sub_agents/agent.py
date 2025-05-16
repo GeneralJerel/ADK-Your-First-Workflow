@@ -1,5 +1,5 @@
 from google.adk.agents.llm_agent import Agent
-# search
+from google.adk.tools import google_search
 
 from . import prompt
 
@@ -8,11 +8,12 @@ from . import prompt
 job_description_search_agent = Agent(
     model=constants.MODEL,
     name="job_description_search_agent",
-    description="A helpful agent to find job descriptions",
+    description="A helpful agent to find job descriptions from google search",
     instruction=prompt.JOB_DESCRIPTION_SEARCH_AGENT_PROMPT,
     tools=[
-        
+        google.adk.tools.google_search,
     ],
+    output_key="job_description",
 )
 
 workflow_analysis_agent = Agent(
@@ -20,12 +21,13 @@ workflow_analysis_agent = Agent(
     name="workflow_analysis_agent",
     description="A helpful agent to analyze workflows",
     instruction=prompt.WORKFLOW_ANALYSIS_AGENT_PROMPT,
+    output_key="workflow_analysis",
 )
-
 
 prompt_engineer_agent = Agent(
     model=constants.MODEL,
     name="prompt_engineer_agent",
-    description="A helpful agent to engineer prompts",
+    description="selects high potential for optimazation from analysis and creates prompts, and adds them to the prompt library",
     instruction=prompt.PROMPT_ENGINEER_AGENT_PROMPT,
+    output_key="prompt_library",
 )
