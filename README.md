@@ -22,7 +22,7 @@ adk-first-workflow/
 
 This project implements a role automation workflow using ADK's agent architecture. The workflow consists of three specialized sub-agents that work together in sequence:
 
-1. **Job Description Search Agent**: Analyzes and extracts key information from job descriptions
+1. **Job Description Agent**: Analyzes and extracts key information from job descriptions
 2. **Workflow Analysis Agent**: Processes the extracted information to identify workflows
 3. **Prompt Engineer Agent**: Creates optimized prompts based on the workflow analysis
 

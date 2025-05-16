@@ -1,15 +1,14 @@
 from google.adk.agents.llm_agent import Agent
-from google.adk.tools import google_search
 
 from . import prompt
 
 # --- 1. Define Sub-Agents for Each Pipeline Stage ---
 
-job_description_search_agent = Agent(
+job_description_agent = Agent(
     model='gemini-2.0-flash',
-    name="job_description_search_agent",
+    name="job_description_agent",
     description="A helpful agent to find job descriptions from google search",
-    instruction=prompt.JOB_DESCRIPTION_SEARCH_AGENT_PROMPT,
+    instruction=prompt.JOB_DESCRIPTION_AGENT_PROMPT,
     output_key="job_description",
 )
 
