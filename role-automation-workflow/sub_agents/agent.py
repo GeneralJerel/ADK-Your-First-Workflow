@@ -6,18 +6,15 @@ from . import prompt
 # --- 1. Define Sub-Agents for Each Pipeline Stage ---
 
 job_description_search_agent = Agent(
-    model=constants.MODEL,
+    model='gemini-2.0-flash',
     name="job_description_search_agent",
     description="A helpful agent to find job descriptions from google search",
     instruction=prompt.JOB_DESCRIPTION_SEARCH_AGENT_PROMPT,
-    tools=[
-        google.adk.tools.google_search,
-    ],
     output_key="job_description",
 )
 
 workflow_analysis_agent = Agent(
-    model=constants.MODEL,
+    model='gemini-2.0-flash',
     name="workflow_analysis_agent",
     description="A helpful agent to analyze workflows",
     instruction=prompt.WORKFLOW_ANALYSIS_AGENT_PROMPT,
@@ -25,7 +22,7 @@ workflow_analysis_agent = Agent(
 )
 
 prompt_engineer_agent = Agent(
-    model=constants.MODEL,
+    model='gemini-2.0-flash',
     name="prompt_engineer_agent",
     description="selects high potential for optimazation from analysis and creates prompts, and adds them to the prompt library",
     instruction=prompt.PROMPT_ENGINEER_AGENT_PROMPT,
