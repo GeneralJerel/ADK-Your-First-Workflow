@@ -99,5 +99,7 @@ If no high-potential and mid-potential tasks are available, return:
 - Analyze the {workflow_analysis} and write at least 2-3 prompts for AI agents to automate the tasks that are high potential if there are no high select some from the mid-potential tasks for generative ai automation, anything with text, thinking  drafting or writing.
 """
 
-
+# --- 3. add new parameters to the prompt ---
+  # - `Agent Name`: the name of the agent to be used to automate the task
+  # - `Agent Description`: the short description of the agent to be used to automate the task    
 

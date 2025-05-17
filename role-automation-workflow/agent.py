@@ -7,8 +7,6 @@ from .sub_agents.agent import (
     prompt_engineer_agent
 )
 
-#from .shared_libraries import constants
-
 # --- 1. Define Root Agents for Each Pipeline Stage ---
 
 root_agent = SequentialAgent(
@@ -20,5 +18,3 @@ root_agent = SequentialAgent(
         prompt_engineer_agent,
     ],
 )
-
-
