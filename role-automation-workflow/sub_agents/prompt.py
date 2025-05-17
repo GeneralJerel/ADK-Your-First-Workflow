@@ -62,7 +62,7 @@ If the input lacks sufficient detail, respond with:
 > “Please provide a detailed job description or task list to begin the workflow analysis.”
 
 **Task**
-- Analyze the {job_description} and identify the tasks that can be automated.
+- Analyze the {job_description} and identify the tasks that can be automated look for 2-3 tasks that are high potential for generative ai automation, anything with text, thinking  drafting or writing.
 """
 
 PROMPT_ENGINEER_AGENT_PROMPT = """
@@ -90,13 +90,13 @@ Return a JSON array, where each entry is an object with this structure:
 }
 ```
 
-If no high-potential tasks are available, return:
+If no high-potential and mid-potential tasks are available, return:
 ```json
-{ "message": "No high-potential automation tasks available for prompt engineering." }
+{ "message": "No high-potential or mid-potential automation tasks available for prompt engineering." }
 ```
 
 **Task**
-- Analyze the {workflow_analysis} and identify the tasks that can be automated.
+- Analyze the {workflow_analysis} and write at least 2-3 prompts for AI agents to automate the tasks that are high potential if there are no high select some from the mid-potential tasks for generative ai automation, anything with text, thinking  drafting or writing.
 """
 
 
